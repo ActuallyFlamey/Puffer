@@ -21,6 +21,9 @@ def is_dev(ctx: discord.Interaction):
 async def on_ready():
     await tree.sync(guild=guild)
 
+    channel = bot.get_channel(1226549384397979784)
+    await channel.send(f"**Puffer** is now running on **discord.py {discord.__version__}**!")
+
 @tree.command(name="ping", description="Is the bot alive?", guild=guild)
 async def ping(ctx: discord.Interaction):
     await ctx.response.send_message("pong :3")
